@@ -532,14 +532,15 @@ public class Map_1 extends Application
         {
                 for(GraphicElement gElem : Map_1.arrayListGraphicElement)
                 {
-                        if(t)
-                                if(gElem.tagName == null || gElem.tagName.equals(s)  )
-                                {
-                                        if(gElem.patterned != null)
-                                                gElem.findPattern();
-                                        draw_object(gElem);
-                                        continue;
-                                }
+                        if(gElem.pattern)
+                                continue;
+                        if(t && (gElem.tagName == null || gElem.tagName.equals(s)))
+                        {
+                                if(gElem.patterned != null)
+                                        gElem.findPattern();
+                                draw_object(gElem);
+                                continue;
+                        }
                         if(gElem.tagName == null)
                                 continue;
                         if(gElem.tagName.equals(s))
